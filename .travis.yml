@@ -7,7 +7,7 @@ before_install:
 
 script:
   - docker run -e CI=true yossishalem/docker-react yarn run test
-	
+
 provider: elasticbeanstalk
 region: "us-east-1"
 app: "docker-react"
