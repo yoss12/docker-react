@@ -8,13 +8,14 @@ before_install:
 script:
   - docker run -e CI=true yossishalem/docker-react yarn run test
 
-provider: elasticbeanstalk
-region: "us-east-1"
-app: "docker-react"
-env: "DockerReact-env"
-backet_name: "elasticbeanstalk-us-east-1-428125636239"
-backet_path: "docker-react"
-on:
-  branch: master
-access_key_id: $AWS_ACCESS_KEY
-secret_access_key: $AWS_SECRET_KEY
+deploy:
+	provider: elasticbeanstalk
+	region: "us-east-1"
+	app: "docker-react"
+	env: "DockerReact-env"
+	backet_name: "elasticbeanstalk-us-east-1-428125636239"
+	backet_path: "docker-react"
+	on:
+		branch: master
+	access_key_id: $AWS_ACCESS_KEY
+	secret_access_key: $AWS_SECRET_KEY
